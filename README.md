@@ -1,141 +1,83 @@
-# Beauté Élégance - Centre de Beauté Portfolio
+# Beauté Élégance — Centre de Beauté (Template Luxe + 3D)
 
-Un site web professionnel, mobile-first, pour un centre de beauté avec du contenu en français et des animations fluides.
+Un site web **professionnel**, **mobile-first** et **haut de gamme** pour un centre de beauté, avec un univers luxe (or / rose gold / bordeaux) et des **éléments 3D** (Three.js).
 
-## 🎨 Caractéristiques
+## ✨ Points forts
 
-- **Design Mobile-First** : Optimisé d'abord pour les téléphones, puis pour les tablettes et ordinateurs
-- **Design Professionnel** : Esthétique élégante et propre adaptée à l'industrie de la beauté
-- **Animations Fluides** : Transitions douces, effets de fondu, et animations au survol
-- **Contenu en Français** : Tout le contenu est en français professionnel
-- **Responsive** : S'adapte parfaitement à toutes les tailles d'écran
-- **Léger** : Aucune dépendance externe requise
+- **Design mobile-first** : optimisé d’abord pour le téléphone, puis pour tablette et desktop
+- **Esthétique premium** : surfaces « glass », dégradés luxe, typographies élégantes
+- **3D (Three.js)** : arrière‑plan 3D fluide + vitrine 3D interactive dans la galerie
+- **Galerie avant / après** : comparaison glissable (touch-friendly)
+- **Animations douces** : révélations au scroll, micro‑interactions, cartes 3D (tilt)
+- **Accessibilité** : lien “skip”, focus visibles, prise en compte de `prefers-reduced-motion`
 
-## 📱 Sections du Site
+## 🧩 Sections
 
-1. **Header** : Navigation avec espace pour logo (à personnaliser)
-2. **Hero** : Section d'introduction professionnelle
-3. **Services** : Présentation des services avec cartes animées
-   - Soins du Visage
-   - Maquillage Professionnel
-   - Manucure & Pédicure
-   - Épilation
-   - Massage & Bien-être
-   - Extension de Cils
-4. **Portfolio** : Galerie de réalisations avec effets au survol
-5. **Contact** : Informations de contact et formulaire
-6. **Footer** : Pied de page professionnel avec liens sociaux
+1. **Header / Navigation** : menu sticky, hamburger animé (mobile)
+2. **Hero** : introduction premium + **arrière‑plan 3D**
+3. **Services** : cartes responsives, hover/tilt
+4. **Galerie 3D** : avant/après + vitrine 3D rotative
+5. **Pourquoi nous** : bénéfices / différenciants
+6. **Contact** : infos, formulaire, **carte** (OpenStreetMap)
+7. **Footer** : liens rapides + réseaux sociaux
 
-## 🎨 Palette de Couleurs
+## 🎨 Palette de couleurs (luxe beauté)
 
-- **Couleur Primaire** : #d4a574 (Or élégant)
-- **Couleur Secondaire** : #f5e6d3 (Beige clair)
-- **Couleur Accent** : #c9a882 (Or doux)
-- **Texte Foncé** : #2c2c2c
-- **Texte Clair** : #666666
-- **Fond Clair** : #faf8f5
+- Or : `#D4A574`
+- Rose gold : `#E8B4A8`
+- Beige : `#F5E6D3`
+- Cream : `#FFF9F5`
+- Bordeaux : `#8B4C5C`
+- Texte : `#2C2C2C`
 
-## 🚀 Installation et Utilisation
+Toutes les couleurs sont centralisées dans `styles.css` via des variables CSS (`:root`).
 
-1. **Ouvrir le site** : Ouvrez simplement le fichier `index.html` dans votre navigateur
-2. **Hébergement** : Téléchargez les fichiers sur votre hébergeur web
-3. **Personnalisation** : Voir la section ci-dessous
+## 🧱 Stack & dépendances
 
-## ✏️ Personnalisation
+- **HTML5 / CSS3 / JavaScript**
+- **Three.js** (chargé via CDN)
+- **Google Fonts** (Inter + Playfair Display)
 
-### Ajouter Votre Logo
-1. Remplacez le contenu de `.nav__logo-placeholder` dans le header
-2. Ajoutez votre image logo : `<img src="votre-logo.png" alt="Logo">`
+> Le site est prêt à déployer tel quel. Si vous souhaitez un mode 100% offline, remplacez les CDN par des fichiers locaux.
 
-### Modifier les Images du Portfolio
-Remplacez les URLs des images dans `index.html` par vos propres images :
+## 🚀 Utilisation
+
+1. Ouvrez `index.html` dans votre navigateur.
+2. Hébergez le dossier tel quel sur votre hébergeur (Netlify, Vercel, GitHub Pages, etc.).
+
+## ✏️ Personnalisation rapide
+
+### Ajouter votre logo
+Dans `index.html`, remplacez le bloc `.nav__logo-placeholder` :
+
 ```html
-<img src="chemin/vers/votre-image.jpg" alt="Description">
+<img src="votre-logo.png" alt="Logo Beauté Élégance" />
 ```
 
-### Modifier les Informations de Contact
-Dans la section `#contact`, modifiez :
-- L'adresse
-- Le numéro de téléphone
-- L'email
-- Les horaires d'ouverture
+### Images avant / après
+Dans la section `#galerie`, remplacez les URLs des images Unsplash par vos images.
 
-### Modifier les Services
-Éditez la section `.services__grid` pour :
-- Ajouter/supprimer des services
-- Modifier les descriptions
-- Changer les prix
+### Informations de contact
+Dans `#contact`, modifiez :
+- Adresse
+- Téléphone
+- Email
+- Horaires
 
-### Personnaliser les Couleurs
-Dans `styles.css`, modifiez les variables CSS dans `:root` :
-```css
-:root {
-    --primary-color: #votre-couleur;
-    --secondary-color: #votre-couleur;
-    /* etc. */
-}
-```
+### Couleurs / typographies
+- Couleurs : variables CSS dans `:root` (`styles.css`)
+- Fonts : imports dans `<head>` et variables `--body-font` / `--title-font`
 
-## 📱 Navigation Mobile
-
-- Menu hamburger sur mobile
-- Navigation fluide entre les sections
-- Animation de transition pour le menu
-
-## ✨ Animations Incluses
-
-- **Fade In** : Apparition progressive
-- **Slide Up** : Montée depuis le bas
-- **Slide Left/Right** : Glissement latéral
-- **Scale** : Effet d'agrandissement
-- **Hover Effects** : Effets au survol
-- **Parallax** : Effet de profondeur sur le hero
-
-## 🌐 Compatibilité Navigateur
-
-- Chrome (recommandé)
-- Firefox
-- Safari
-- Edge
-- Opera
-- Navigateurs mobiles (iOS Safari, Chrome Android)
-
-## 📄 Structure des Fichiers
+## 📁 Structure des fichiers
 
 ```
 /
-├── index.html       # Page principale
-├── styles.css       # Feuille de style
-├── script.js        # JavaScript pour interactivité
-└── README.md        # Ce fichier
+├── index.html
+├── styles.css
+├── script.js
+└── README.md
 ```
-
-## 🎯 Optimisations Incluses
-
-- Images optimisées avec Unsplash
-- CSS optimisé pour les performances
-- JavaScript minimal et efficace
-- Animations CSS plutôt que JavaScript
-- Mobile-first pour chargement rapide
-- Pas de dépendances externes
-
-## 📞 Support
-
-Pour personnaliser davantage le site, vous pouvez :
-1. Modifier le HTML pour le contenu
-2. Ajuster le CSS pour le style
-3. Étendre le JavaScript pour plus d'interactivité
-
-## 🔄 Mise à Jour du Contenu
-
-1. **Textes** : Modifiez directement dans `index.html`
-2. **Styles** : Ajustez dans `styles.css`
-3. **Fonctionnalités** : Étendez dans `script.js`
 
 ## 📝 Licence
 
-Ce template est libre d'utilisation pour votre centre de beauté.
-
----
-
-**Fait avec ❤️ pour votre succès dans l'industrie de la beauté**
+Template libre d'utilisation pour votre centre de beauté.
