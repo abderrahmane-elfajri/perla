@@ -3,318 +3,391 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Centre de beauté professionnel - Soins esthétiques, maquillage, et bien-être">
-    <title>Beauté Élégance - Centre de Beauté</title>
+    <meta name="description" content="Centre de beauté premium — soins visage, coiffure, maquillage et bien-être. Expérience luxe, sur mesure, à Paris.">
+    <meta name="theme-color" content="#D4A574">
+    <title>Beauté Élégance — Centre de Beauté</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Header avec Navigation -->
+    <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+    <!-- 3D background canvas (decoratif) -->
+    <canvas id="bg-canvas" class="bg-canvas" aria-hidden="true"></canvas>
+
+    <!-- Header / Navigation -->
     <header class="header" id="header">
-        <nav class="nav container">
+        <nav class="nav container" aria-label="Navigation principale">
             <div class="nav__logo-container">
-                <div class="nav__logo-placeholder">
-                    <span class="logo-text">VOTRE LOGO ICI</span>
-                </div>
+                <a class="nav__logo" href="#accueil" aria-label="Retour à l'accueil">
+                    <div class="nav__logo-placeholder" aria-hidden="true">
+                        <span class="logo-text">VOTRE LOGO ICI</span>
+                    </div>
+                </a>
             </div>
-            
+
             <div class="nav__menu" id="nav-menu">
                 <ul class="nav__list">
-                    <li class="nav__item">
-                        <a href="#accueil" class="nav__link">Accueil</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#services" class="nav__link">Services</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#portfolio" class="nav__link">Portfolio</a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">Contact</a>
-                    </li>
+                    <li class="nav__item"><a href="#accueil" class="nav__link">Accueil</a></li>
+                    <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#galerie" class="nav__link">Galerie 3D</a></li>
+                    <li class="nav__item"><a href="#atouts" class="nav__link">Pourquoi nous</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact</a></li>
                 </ul>
             </div>
 
-            <div class="nav__toggle" id="nav-toggle">
+            <button class="nav__toggle" id="nav-toggle" type="button" aria-controls="nav-menu" aria-expanded="false" aria-label="Ouvrir le menu">
                 <span class="nav__toggle-line"></span>
                 <span class="nav__toggle-line"></span>
                 <span class="nav__toggle-line"></span>
-            </div>
+            </button>
         </nav>
     </header>
 
-    <!-- Section Hero -->
-    <section class="hero" id="accueil">
-        <div class="hero__container container">
-            <div class="hero__content fade-in">
-                <h1 class="hero__title">Beauté Élégance</h1>
-                <p class="hero__subtitle">Votre Centre de Beauté d'Exception</p>
-                <p class="hero__description">
-                    Découvrez une expérience unique de soins esthétiques et de bien-être. 
-                    Notre équipe d'experts vous accompagne dans votre quête de beauté et d'harmonie.
-                </p>
-                <a href="#contact" class="hero__button">Prendre Rendez-vous</a>
-            </div>
-        </div>
-        <div class="hero__overlay"></div>
-    </section>
+    <main id="main">
+        <!-- Hero / 3D -->
+        <section class="hero" id="accueil" aria-labelledby="hero-title">
+            <div class="hero__scrim" aria-hidden="true"></div>
 
-    <!-- Section Services -->
-    <section class="services" id="services">
-        <div class="container">
-            <h2 class="section__title">Nos Services</h2>
-            <p class="section__subtitle">Des prestations de qualité pour sublimer votre beauté</p>
-            
-            <div class="services__grid">
-                <div class="service-card slide-up">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/>
-                            <circle cx="12" cy="12" r="4" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-card__title">Soins du Visage</h3>
-                    <p class="service-card__description">
-                        Nettoyage en profondeur, hydratation, anti-âge, et traitements personnalisés 
-                        pour une peau éclatante et rajeunie.
+            <div class="hero__container container">
+                <div class="hero__content fade-in">
+                    <p class="hero__eyebrow">Centre de beauté premium • Paris</p>
+                    <h1 class="hero__title" id="hero-title">Beauté Élégance</h1>
+                    <p class="hero__subtitle">Luxe, savoir-faire & bien-être sur mesure</p>
+                    <p class="hero__description">
+                        Vivez une expérience esthétique d’exception : soins visage, coiffure signature, maquillage professionnel et rituels bien-être.
+                        Chaque prestation est pensée pour révéler votre éclat, avec une précision et une élégance irréprochables.
                     </p>
-                    <p class="service-card__price">À partir de 45€</p>
-                </div>
 
-                <div class="service-card slide-up">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z" fill="currentColor"/>
-                        </svg>
+                    <div class="hero__actions">
+                        <a href="#contact" class="button button--primary">Prendre rendez-vous</a>
+                        <a href="#services" class="button button--ghost">Découvrir nos services</a>
                     </div>
-                    <h3 class="service-card__title">Maquillage Professionnel</h3>
-                    <p class="service-card__description">
-                        Maquillage de jour, de soirée, mariée, et cours personnalisés pour 
-                        révéler votre beauté naturelle.
-                    </p>
-                    <p class="service-card__price">À partir de 35€</p>
-                </div>
 
-                <div class="service-card slide-up">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-card__title">Manucure & Pédicure</h3>
-                    <p class="service-card__description">
-                        Soins des mains et des pieds, pose de vernis semi-permanent, nail art, 
-                        et french manucure pour des ongles parfaits.
-                    </p>
-                    <p class="service-card__price">À partir de 25€</p>
-                </div>
-
-                <div class="service-card slide-up">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-card__title">Épilation</h3>
-                    <p class="service-card__description">
-                        Épilation à la cire, sourcils, et soins post-épilatoires pour une peau 
-                        douce et lisse en toute sécurité.
-                    </p>
-                    <p class="service-card__price">À partir de 15€</p>
-                </div>
-
-                <div class="service-card slide-up">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-card__title">Massage & Bien-être</h3>
-                    <p class="service-card__description">
-                        Massages relaxants, drainage lymphatique, et soins corporels pour votre 
-                        détente et votre bien-être absolu.
-                    </p>
-                    <p class="service-card__price">À partir de 55€</p>
-                </div>
-
-                <div class="service-card slide-up">
-                    <div class="service-card__icon">
-                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-7-2c1.65 0 3-1.35 3-3s-1.35-3-3-3-3 1.35-3 3 1.35 3 3 3zm0-4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1z" fill="currentColor"/>
-                        </svg>
-                    </div>
-                    <h3 class="service-card__title">Extension de Cils</h3>
-                    <p class="service-card__description">
-                        Pose d'extensions de cils volume russe, classique, et rehaussement 
-                        pour un regard magnifique et captivant.
-                    </p>
-                    <p class="service-card__price">À partir de 65€</p>
+                    <ul class="hero__highlights" aria-label="Nos engagements">
+                        <li class="hero__highlight">Produits haut de gamme</li>
+                        <li class="hero__highlight">Hygiène & protocoles stricts</li>
+                        <li class="hero__highlight">Conseils personnalisés</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Section Portfolio -->
-    <section class="portfolio" id="portfolio">
-        <div class="container">
-            <h2 class="section__title">Notre Portfolio</h2>
-            <p class="section__subtitle">Découvrez nos réalisations et nos transformations</p>
-            
-            <div class="portfolio__grid">
-                <div class="portfolio-item fade-in-scale">
-                    <div class="portfolio-item__image">
-                        <img src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=800&h=600&fit=crop" alt="Maquillage professionnel">
-                        <div class="portfolio-item__overlay">
-                            <h3 class="portfolio-item__title">Maquillage Soirée</h3>
-                            <p class="portfolio-item__category">Maquillage</p>
+            <div class="hero__scroll-hint" aria-hidden="true">
+                <span class="scroll-hint__text">Découvrir</span>
+                <span class="scroll-hint__line"></span>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="services" id="services" aria-labelledby="services-title">
+            <div class="container">
+                <h2 class="section__title reveal reveal--up" id="services-title">Nos Services</h2>
+                <p class="section__subtitle reveal reveal--up">Des prestations expertes, un résultat précis, une sensation de luxe.</p>
+
+                <div class="services__grid">
+                    <article class="service-card reveal reveal--up tilt" data-tilt>
+                        <div class="service-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/>
+                                <circle cx="12" cy="12" r="4" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">Soins du Visage</h3>
+                        <p class="service-card__description">Nettoyage profond, hydratation, anti-âge et glow. Protocoles personnalisés selon votre peau.</p>
+                        <p class="service-card__price">À partir de 49€</p>
+                    </article>
+
+                    <article class="service-card reveal reveal--up tilt" data-tilt>
+                        <div class="service-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM20 19H4v-2h16v2zm0-5H4V8h5.08L7 10.83 8.62 12 11 8.76l1-1.36 1 1.36L15.38 12 17 10.83 14.92 8H20v6z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">Coiffure Signature</h3>
+                        <p class="service-card__description">Brushing, coiffage événementiel et finitions premium. Un style net, lumineux, durable.</p>
+                        <p class="service-card__price">À partir de 39€</p>
+                    </article>
+
+                    <article class="service-card reveal reveal--up tilt" data-tilt>
+                        <div class="service-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">Maquillage Professionnel</h3>
+                        <p class="service-card__description">Jour, soirée, mariée. Teint parfait, lumière maîtrisée et tenue longue durée.</p>
+                        <p class="service-card__price">À partir de 45€</p>
+                    </article>
+
+                    <article class="service-card reveal reveal--up tilt" data-tilt>
+                        <div class="service-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">Manucure & Pédicure</h3>
+                        <p class="service-card__description">Soins, semi-permanent, nail art élégant. Des mains impeccables, des détails couture.</p>
+                        <p class="service-card__price">À partir de 29€</p>
+                    </article>
+
+                    <article class="service-card reveal reveal--up tilt" data-tilt>
+                        <div class="service-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">Épilation Précision</h3>
+                        <p class="service-card__description">Sourcils, visage, corps. Une peau nette, douceur immédiate, finitions soignées.</p>
+                        <p class="service-card__price">À partir de 15€</p>
+                    </article>
+
+                    <article class="service-card reveal reveal--up tilt" data-tilt>
+                        <div class="service-card__icon" aria-hidden="true">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm0 16H5V5h14v14zm-7-2c1.65 0 3-1.35 3-3s-1.35-3-3-3-3 1.35-3 3 1.35 3 3 3z" fill="currentColor"/>
+                            </svg>
+                        </div>
+                        <h3 class="service-card__title">Massage & Bien-être</h3>
+                        <p class="service-card__description">Rituels relaxants, drainage et soins corps. Une parenthèse sensorielle, profondément apaisante.</p>
+                        <p class="service-card__price">À partir de 59€</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galerie 3D / Avant-Après -->
+        <section class="gallery" id="galerie" aria-labelledby="gallery-title">
+            <div class="container">
+                <h2 class="section__title reveal reveal--up" id="gallery-title">Galerie 3D — Avant / Après</h2>
+                <p class="section__subtitle reveal reveal--up">Des transformations visibles. Faites glisser pour comparer, puis explorez la vitrine 3D.</p>
+
+                <div class="gallery__layout">
+                    <div class="gallery__slider reveal reveal--left">
+                        <div class="gallery__slides" id="gallery-slides" aria-live="polite">
+                            <article class="gallery__slide is-active" data-accent="#E8B4A8" aria-label="Transformation 1 sur 3">
+                                <h3 class="gallery__slide-title">Soin Éclat — Teint lumineux</h3>
+                                <p class="gallery__slide-text">Une peau plus uniforme, un glow subtil et une texture visiblement affinée.</p>
+
+                                <div class="ba" data-ba>
+                                    <div class="ba__stage" data-ba-stage>
+                                        <img class="ba__img ba__img--before" src="https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?w=900&h=700&fit=crop" alt="Avant : peau terne">
+                                        <div class="ba__after" data-ba-after>
+                                            <img class="ba__img ba__img--after" src="https://images.unsplash.com/photo-1487412947147-5cebf100ffc2?w=900&h=700&fit=crop" alt="Après : peau lumineuse">
+                                        </div>
+                                        <div class="ba__handle" aria-hidden="true"></div>
+                                    </div>
+                                    <div class="ba__labels" aria-hidden="true"><span>Avant</span><span>Après</span></div>
+                                    <input class="ba__range" data-ba-range type="range" min="0" max="100" value="55" aria-label="Comparer avant et après">
+                                </div>
+                            </article>
+
+                            <article class="gallery__slide" data-accent="#D4A574" aria-label="Transformation 2 sur 3">
+                                <h3 class="gallery__slide-title">Maquillage Soirée — Ligne couture</h3>
+                                <p class="gallery__slide-text">Des volumes maîtrisés, une lumière précise et une tenue longue durée.</p>
+
+                                <div class="ba" data-ba>
+                                    <div class="ba__stage" data-ba-stage>
+                                        <img class="ba__img ba__img--before" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=900&h=700&fit=crop" alt="Avant : maquillage discret">
+                                        <div class="ba__after" data-ba-after>
+                                            <img class="ba__img ba__img--after" src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=900&h=700&fit=crop" alt="Après : maquillage sophistiqué">
+                                        </div>
+                                        <div class="ba__handle" aria-hidden="true"></div>
+                                    </div>
+                                    <div class="ba__labels" aria-hidden="true"><span>Avant</span><span>Après</span></div>
+                                    <input class="ba__range" data-ba-range type="range" min="0" max="100" value="48" aria-label="Comparer avant et après">
+                                </div>
+                            </article>
+
+                            <article class="gallery__slide" data-accent="#8B4C5C" aria-label="Transformation 3 sur 3">
+                                <h3 class="gallery__slide-title">Manucure — Détails signature</h3>
+                                <p class="gallery__slide-text">Finitions nettes, brillance luxueuse et design élégant, adapté à votre style.</p>
+
+                                <div class="ba" data-ba>
+                                    <div class="ba__stage" data-ba-stage>
+                                        <img class="ba__img ba__img--before" src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=900&h=700&fit=crop" alt="Avant : ongles naturels">
+                                        <div class="ba__after" data-ba-after>
+                                            <img class="ba__img ba__img--after" src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=900&h=700&fit=crop" alt="Après : manucure finition premium">
+                                        </div>
+                                        <div class="ba__handle" aria-hidden="true"></div>
+                                    </div>
+                                    <div class="ba__labels" aria-hidden="true"><span>Avant</span><span>Après</span></div>
+                                    <input class="ba__range" data-ba-range type="range" min="0" max="100" value="60" aria-label="Comparer avant et après">
+                                </div>
+                            </article>
+                        </div>
+
+                        <div class="gallery__controls" aria-label="Navigation de la galerie">
+                            <button class="gallery__nav" type="button" data-gallery-prev aria-label="Voir la transformation précédente">Précédent</button>
+
+                            <div class="gallery__dots" role="tablist" aria-label="Choisir une transformation">
+                                <button class="gallery__dot is-active" type="button" role="tab" aria-selected="true" data-gallery-dot="0" aria-label="Transformation 1"></button>
+                                <button class="gallery__dot" type="button" role="tab" aria-selected="false" data-gallery-dot="1" aria-label="Transformation 2"></button>
+                                <button class="gallery__dot" type="button" role="tab" aria-selected="false" data-gallery-dot="2" aria-label="Transformation 3"></button>
+                            </div>
+
+                            <button class="gallery__nav" type="button" data-gallery-next aria-label="Voir la transformation suivante">Suivant</button>
+                        </div>
+
+                        <p class="gallery__hint">Astuce : balayez horizontalement sur mobile pour changer de transformation.</p>
+                    </div>
+
+                    <aside class="gallery__three reveal reveal--right" aria-label="Vitrine 3D interactive">
+                        <div class="gallery__three-frame">
+                            <canvas id="gallery-canvas" class="gallery__canvas"></canvas>
+                            <div class="gallery__three-overlay" aria-hidden="true">
+                                <p class="gallery__three-title">Vitrine 3D</p>
+                                <p class="gallery__three-text">Touchez et faites glisser pour faire tourner l’objet.</p>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pourquoi nous -->
+        <section class="benefits" id="atouts" aria-labelledby="benefits-title">
+            <div class="container">
+                <h2 class="section__title reveal reveal--up" id="benefits-title">Pourquoi nous choisir</h2>
+                <p class="section__subtitle reveal reveal--up">Une signature premium : précision, sécurité, confort — et une expérience mémorable.</p>
+
+                <div class="benefits__grid">
+                    <article class="benefit-card reveal reveal--up tilt" data-tilt>
+                        <h3 class="benefit-card__title">Expertise & Diagnostic</h3>
+                        <p class="benefit-card__text">Un diagnostic clair, des conseils justes et un plan de soin adapté à vos objectifs.</p>
+                    </article>
+
+                    <article class="benefit-card reveal reveal--up tilt" data-tilt>
+                        <h3 class="benefit-card__title">Hygiène irréprochable</h3>
+                        <p class="benefit-card__text">Matériel stérilisé, gestes maîtrisés, protocoles stricts — votre sérénité avant tout.</p>
+                    </article>
+
+                    <article class="benefit-card reveal reveal--up tilt" data-tilt>
+                        <h3 class="benefit-card__title">Produits haut de gamme</h3>
+                        <p class="benefit-card__text">Textures sensorielles, actifs sélectionnés, finitions luxueuses — résultats visibles.</p>
+                    </article>
+
+                    <article class="benefit-card reveal reveal--up tilt" data-tilt>
+                        <h3 class="benefit-card__title">Ambiance 5★</h3>
+                        <p class="benefit-card__text">Lumière douce, senteurs délicates, confort premium — une parenthèse de calme.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section class="contact" id="contact" aria-labelledby="contact-title">
+            <div class="container">
+                <h2 class="section__title reveal reveal--up" id="contact-title">Nous Contacter</h2>
+                <p class="section__subtitle reveal reveal--up">Une question ? Une demande de rendez-vous ? Nous vous répondons rapidement.</p>
+
+                <div class="contact__grid">
+                    <div class="contact__info reveal reveal--left">
+                        <div class="contact__item">
+                            <div class="contact__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="contact__details">
+                                <h3 class="contact__title">Adresse</h3>
+                                <p class="contact__text">123 Avenue de la Beauté<br>75001 Paris, France</p>
+                            </div>
+                        </div>
+
+                        <div class="contact__item">
+                            <div class="contact__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="contact__details">
+                                <h3 class="contact__title">Téléphone</h3>
+                                <p class="contact__text">+33 1 23 45 67 89</p>
+                            </div>
+                        </div>
+
+                        <div class="contact__item">
+                            <div class="contact__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="contact__details">
+                                <h3 class="contact__title">Email</h3>
+                                <p class="contact__text">contact@beaute-elegance.fr</p>
+                            </div>
+                        </div>
+
+                        <div class="contact__item">
+                            <div class="contact__icon" aria-hidden="true">
+                                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill="currentColor"/>
+                                </svg>
+                            </div>
+                            <div class="contact__details">
+                                <h3 class="contact__title">Horaires</h3>
+                                <p class="contact__text">Lun - Ven: 9h00 - 19h00<br>Samedi: 9h00 - 18h00<br>Dimanche: Fermé</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="portfolio-item fade-in-scale">
-                    <div class="portfolio-item__image">
-                        <img src="https://images.unsplash.com/photo-1516975080664-ed2fc6a32937?w=800&h=600&fit=crop" alt="Soins du visage">
-                        <div class="portfolio-item__overlay">
-                            <h3 class="portfolio-item__title">Soin Anti-âge</h3>
-                            <p class="portfolio-item__category">Soins du Visage</p>
-                        </div>
+                    <div class="contact__form reveal reveal--right">
+                        <form class="form" autocomplete="on">
+                            <div class="form__group">
+                                <label class="visually-hidden" for="name">Votre nom</label>
+                                <input id="name" name="name" type="text" class="form__input" placeholder="Votre nom" required>
+                            </div>
+
+                            <div class="form__group">
+                                <label class="visually-hidden" for="email">Votre email</label>
+                                <input id="email" name="email" type="email" class="form__input" placeholder="Votre email" required>
+                            </div>
+
+                            <div class="form__group">
+                                <label class="visually-hidden" for="phone">Votre téléphone</label>
+                                <input id="phone" name="phone" type="tel" class="form__input" placeholder="Votre téléphone">
+                            </div>
+
+                            <div class="form__group">
+                                <label class="visually-hidden" for="service">Service souhaité</label>
+                                <select id="service" name="service" class="form__input" required>
+                                    <option value="">Sélectionnez un service</option>
+                                    <option value="visage">Soins du Visage</option>
+                                    <option value="coiffure">Coiffure Signature</option>
+                                    <option value="maquillage">Maquillage Professionnel</option>
+                                    <option value="manucure">Manucure & Pédicure</option>
+                                    <option value="epilation">Épilation Précision</option>
+                                    <option value="massage">Massage & Bien-être</option>
+                                </select>
+                            </div>
+
+                            <div class="form__group">
+                                <label class="visually-hidden" for="message">Votre message</label>
+                                <textarea id="message" name="message" class="form__input form__textarea" placeholder="Votre message" rows="4"></textarea>
+                            </div>
+
+                            <button type="submit" class="form__button">Envoyer la demande</button>
+                            <p class="form__note">En envoyant ce formulaire, vous acceptez d’être recontacté(e) par notre équipe.</p>
+                        </form>
                     </div>
-                </div>
 
-                <div class="portfolio-item fade-in-scale">
-                    <div class="portfolio-item__image">
-                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?w=800&h=600&fit=crop" alt="Manucure">
-                        <div class="portfolio-item__overlay">
-                            <h3 class="portfolio-item__title">Nail Art Élégant</h3>
-                            <p class="portfolio-item__category">Manucure</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in-scale">
-                    <div class="portfolio-item__image">
-                        <img src="https://images.unsplash.com/photo-1560750588-73207b1ef5b8?w=800&h=600&fit=crop" alt="Extension de cils">
-                        <div class="portfolio-item__overlay">
-                            <h3 class="portfolio-item__title">Extension Volume</h3>
-                            <p class="portfolio-item__category">Extension de Cils</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in-scale">
-                    <div class="portfolio-item__image">
-                        <img src="https://images.unsplash.com/photo-1519415387722-a1c3bbef716c?w=800&h=600&fit=crop" alt="Maquillage mariée">
-                        <div class="portfolio-item__overlay">
-                            <h3 class="portfolio-item__title">Maquillage Mariée</h3>
-                            <p class="portfolio-item__category">Maquillage</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-item fade-in-scale">
-                    <div class="portfolio-item__image">
-                        <img src="https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=800&h=600&fit=crop" alt="Massage bien-être">
-                        <div class="portfolio-item__overlay">
-                            <h3 class="portfolio-item__title">Massage Relaxant</h3>
-                            <p class="portfolio-item__category">Bien-être</p>
-                        </div>
+                    <div class="contact__map reveal reveal--up" aria-label="Localisation">
+                        <iframe
+                            class="map"
+                            title="Carte — Beauté Élégance"
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            src="https://www.openstreetmap.org/export/embed.html?bbox=2.327%2C48.855%2C2.352%2C48.868&layer=mapnik">
+                        </iframe>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Section Contact -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <h2 class="section__title">Nous Contacter</h2>
-            <p class="section__subtitle">Prenez rendez-vous dès aujourd'hui</p>
-            
-            <div class="contact__grid">
-                <div class="contact__info slide-left">
-                    <div class="contact__item">
-                        <div class="contact__icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <div class="contact__details">
-                            <h3 class="contact__title">Adresse</h3>
-                            <p class="contact__text">123 Avenue de la Beauté<br>75001 Paris, France</p>
-                        </div>
-                    </div>
-
-                    <div class="contact__item">
-                        <div class="contact__icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <div class="contact__details">
-                            <h3 class="contact__title">Téléphone</h3>
-                            <p class="contact__text">+33 1 23 45 67 89</p>
-                        </div>
-                    </div>
-
-                    <div class="contact__item">
-                        <div class="contact__icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <div class="contact__details">
-                            <h3 class="contact__title">Email</h3>
-                            <p class="contact__text">contact@beaute-elegance.fr</p>
-                        </div>
-                    </div>
-
-                    <div class="contact__item">
-                        <div class="contact__icon">
-                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67z" fill="currentColor"/>
-                            </svg>
-                        </div>
-                        <div class="contact__details">
-                            <h3 class="contact__title">Horaires</h3>
-                            <p class="contact__text">
-                                Lun - Ven: 9h00 - 19h00<br>
-                                Samedi: 9h00 - 18h00<br>
-                                Dimanche: Fermé
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="contact__form slide-right">
-                    <form class="form">
-                        <div class="form__group">
-                            <input type="text" class="form__input" placeholder="Votre nom" required>
-                        </div>
-                        <div class="form__group">
-                            <input type="email" class="form__input" placeholder="Votre email" required>
-                        </div>
-                        <div class="form__group">
-                            <input type="tel" class="form__input" placeholder="Votre téléphone">
-                        </div>
-                        <div class="form__group">
-                            <select class="form__input" required>
-                                <option value="">Sélectionnez un service</option>
-                                <option value="visage">Soins du Visage</option>
-                                <option value="maquillage">Maquillage Professionnel</option>
-                                <option value="manucure">Manucure & Pédicure</option>
-                                <option value="epilation">Épilation</option>
-                                <option value="massage">Massage & Bien-être</option>
-                                <option value="cils">Extension de Cils</option>
-                            </select>
-                        </div>
-                        <div class="form__group">
-                            <textarea class="form__input form__textarea" placeholder="Votre message" rows="4"></textarea>
-                        </div>
-                        <button type="submit" class="form__button">Envoyer la Demande</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
@@ -322,18 +395,15 @@
             <div class="footer__content">
                 <div class="footer__section">
                     <h3 class="footer__title">Beauté Élégance</h3>
-                    <p class="footer__text">
-                        Votre centre de beauté d'exception depuis 2020. 
-                        Nous mettons notre expertise et notre passion au service de votre beauté.
-                    </p>
+                    <p class="footer__text">Centre de beauté premium. Expertise, confort et finitions luxueuses — pour une élégance intemporelle.</p>
                 </div>
 
                 <div class="footer__section">
-                    <h3 class="footer__title">Liens Rapides</h3>
+                    <h3 class="footer__title">Liens rapides</h3>
                     <ul class="footer__links">
                         <li><a href="#accueil" class="footer__link">Accueil</a></li>
                         <li><a href="#services" class="footer__link">Services</a></li>
-                        <li><a href="#portfolio" class="footer__link">Portfolio</a></li>
+                        <li><a href="#galerie" class="footer__link">Galerie 3D</a></li>
                         <li><a href="#contact" class="footer__link">Contact</a></li>
                     </ul>
                 </div>
@@ -342,17 +412,17 @@
                     <h3 class="footer__title">Suivez-nous</h3>
                     <div class="footer__social">
                         <a href="#" class="footer__social-link" aria-label="Facebook">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
                         </a>
                         <a href="#" class="footer__social-link" aria-label="Instagram">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073z"/>
                             </svg>
                         </a>
                         <a href="#" class="footer__social-link" aria-label="Pinterest">
-                            <svg viewBox="0 0 24 24" fill="currentColor">
+                            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M12 0c-6.627 0-12 5.372-12 12 0 5.084 3.163 9.426 7.627 11.174-.105-.949-.2-2.405.042-3.441.218-.937 1.407-5.965 1.407-5.965s-.359-.719-.359-1.782c0-1.668.967-2.914 2.171-2.914 1.023 0 1.518.769 1.518 1.69 0 1.029-.655 2.568-.994 3.995-.283 1.194.599 2.169 1.777 2.169 2.133 0 3.772-2.249 3.772-5.495 0-2.873-2.064-4.882-5.012-4.882-3.414 0-5.418 2.561-5.418 5.207 0 1.031.397 2.138.893 2.738.098.119.112.224.083.345l-.333 1.36c-.053.22-.174.267-.402.161-1.499-.698-2.436-2.889-2.436-4.649 0-3.785 2.75-7.262 7.929-7.262 4.163 0 7.398 2.967 7.398 6.931 0 4.136-2.607 7.464-6.227 7.464-1.216 0-2.359-.631-2.75-1.378l-.748 2.853c-.271 1.043-1.002 2.35-1.492 3.146 1.124.347 2.317.535 3.554.535 6.627 0 12-5.373 12-12 0-6.628-5.373-12-12-12z"/>
                             </svg>
                         </a>
@@ -361,13 +431,12 @@
             </div>
 
             <div class="footer__bottom">
-                <p class="footer__copyright">
-                    &copy; 2024 Beauté Élégance. Tous droits réservés.
-                </p>
+                <p class="footer__copyright">&copy; 2024 Beauté Élégance. Tous droits réservés.</p>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>
